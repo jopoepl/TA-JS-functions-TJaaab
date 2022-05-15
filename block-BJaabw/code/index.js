@@ -11,9 +11,7 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
-}
+minToSec = (n) => n * 60
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +24,8 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
-}
+isInRange = (a, b, n) => (n > a && n < b)
+
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,9 +46,23 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+calculateBMI = (height, weight) => {
+  let BMI = weight / (height * height); // height in meters and weight in kgs
+  switch (true) {
+    case BMI < 18.5:
+      return (`Person is underweight`);
+      break;
+    case BMI > 18.5 && BMI < 24.9:
+      return (`Person has Normal Weight`);
+      break;
+    case BMI > 25 && BMI < 29.9:
+      return (`Person is overweight`);
+      break;
+    default:
+      return (`Person is obese`);
+  }
 }
+
 
 /* 3. appropiateDrinks
 
@@ -64,9 +75,23 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+appropiateDrinks = (age) => {
+  switch (true) {
+    case age < 14:
+      return(`Drink fruit Juice`);
+      break;
+    case age < 18:
+        return(`Drink Soda`);
+        break;
+    case age < 21:
+        return(`Drink fruit-flavored Beer`);
+        break;    
+      default:
+        return(`Drink throat-piercing Vodka`)
+
+  }
 }
+
 
 /* 4. Add two numers or string
 
@@ -79,9 +104,21 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+8
+sum = (input1, input2) => {
+  switch (true) {
+    case (typeof input1 === `string` && typeof input2 === `string`):
+      return(input1 + " " + input2);
+      break;
+      case (typeof input1 === `number` && typeof input2 === `number`):
+        return(input1 + input2);
+        break;
+      default:
+        return(`Enter Valid values`)
+
+  }
 }
+
 
 // Function Test
 sum(2, 4); // 4
